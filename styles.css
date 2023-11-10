@@ -1,8 +1,106 @@
-/*
+.view-content:has(>.circle-diary){
+    background-color: #161616 !important;
+    padding: 0 !important;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.circle-diary.layout{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 60vh auto;
+}
 
-If your plugin does not need CSS, delete this file.
+.circle-diary .circle-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
-*/
+    max-width: 800px;
+    margin: 0 auto 0 auto;
+}
+.circle-diary .circle-container canvas{
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+    user-select: all;
+    position: absolute;
+}
+.circle-diary .circle-container .center-text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.circle-diary .circle-container .year-text{
+    font-weight: 100;
+    font-size: 30px;
+    color: #ffffffc4;
+}
+.circle-diary .circle-container .month-text{
+    font-weight: 100;
+    color: #ffffffc4;
+    opacity: 0.7;
+}
+
+.circle-diary .post-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* position: relative; */
+    background-color: var(--background-primary);
+}
+.circle-diary .post-container > div{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 0 auto;
+}
+.circle-diary .post-container .row{
+    display: flex;
+    justify-content: center;
+}
+.circle-diary .contents-container{
+    width: 100%;
+    /* position: absolute; */
+    user-select: text;
+    padding: var(--size-4-6);
+}
+
+.circle-diary .post-header{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: var(--size-4-6);
+}
+.circle-diary .title-container{
+    font-size: 1.5em;
+    font-weight: 500;
+    user-select: text;
+}
+.circle-diary .controls-container{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.circle-diary .parameter-control{
+    cursor: pointer;
+}
+.circle-diary .parameter-control.draggable{
+    cursor: e-resize;
+}
+.circle-diary .parameter-control small{
+    margin: 0 4px 0 4px;
+    opacity: 0.5;
+}
+.circle-diary .contents-container > *{
+    width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
